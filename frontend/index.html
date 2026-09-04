@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sejal_gram | Social Feed</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TOP NAVBAR
+         ===================================================== -->
+
+    <header class="topbar">
+
+        <!-- BRAND -->
+        <div class="brand">
+
+            <div class="brand-icon">
+                ✦
+            </div>
+
+            <div>
+                <span class="brand-name">
+                    Sejal_gram
+                </span>
+
+                <small>
+                    share your world
+                </small>
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="search-box">
+
+            <span>
+                ⌕
+            </span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search posts..."
+            >
+
+        </div>
+
+
+        <!-- TOP ACTIONS -->
+        <div class="top-actions">
+
+            <button
+                class="icon-btn"
+                title="Notifications"
+            >
+                🔔
+            </button>
+
+
+            <button
+                class="profile-mini"
+                onclick="window.location.href='create-post.html'"
+            >
+
+                <span>
+                    +
+                </span>
+
+                <strong>
+                    Create
+                </strong>
+
+            </button>
+
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN LAYOUT
+         ===================================================== -->
+
+    <main class="social-layout">
+
+
+        <!-- =================================================
+             LEFT SIDEBAR
+             ================================================= -->
+
+        <aside class="sidebar">
+
+            <nav>
+
+                <!-- HOME -->
+                <button class="side-link active">
+
+                    <span>
+                        🏠
+                    </span>
+
+                    Home
+
+                </button>
+
+
+                <!-- EXPLORE -->
+                <button class="side-link">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    Explore
+
+                </button>
+
+
+                <!-- CREATE POST -->
+                <button
+                    class="side-link"
+                    onclick="window.location.href='create-post.html'"
+                >
+
+                    <span>
+                        ✍️
+                    </span>
+
+                    Create Post
+
+                </button>
+
+
+                <!-- ACTIVITY -->
+                <button class="side-link">
+
+                    <span>
+                        ❤️
+                    </span>
+
+                    Activity
+
+                </button>
+
+            </nav>
+
+
+            <!-- DIVIDER -->
+            <div class="sidebar-divider"></div>
+
+
+            <!-- PROFILE -->
+            <div class="sidebar-profile">
+
+                <div class="avatar large-avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <span>
+                        Post Creator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SETTINGS -->
+            <button class="settings-link">
+
+                ⚙️ Settings
+
+            </button>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN FEED
+             ================================================= -->
+
+        <section class="feed">
+
+
+            <!-- =================================================
+                 WELCOME
+                 ================================================= -->
+
+            <div class="welcome-section">
+
+                <div>
+
+                    <p class="eyebrow">
+                        YOUR COMMUNITY
+                    </p>
+
+                    <h1>
+                        Welcome back 👋
+                    </h1>
+
+                    <p class="welcome-text">
+                        Share your thoughts, moments and ideas with the world.
+                    </p>
+
+                </div>
+
+
+                <!-- CREATE POST BUTTON -->
+                <button
+                    class="main-create-btn"
+                    onclick="window.location.href='create-post.html'"
+                >
+                    ✦ Create Post
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 QUICK COMPOSER
+                 ================================================= -->
+
+            <div
+                class="quick-composer"
+                onclick="window.location.href='create-post.html'"
+            >
+
+                <div class="avatar">
+                    S
+                </div>
+
+
+                <div class="composer-input">
+                    What's on your mind?
+                </div>
+
+
+                <button class="composer-btn">
+                    Post
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FEED HEADER
+                 ================================================= -->
+
+            <div class="feed-header">
+
+                <div>
+
+                    <h2>
+                        Latest Posts
+                    </h2>
+
+                    <span id="postCount">
+                        Discover what people are sharing
+                    </span>
+
+                </div>
+
+
+                <button class="filter-btn">
+                    Latest ▾
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 POSTS
+                 ================================================= -->
+
+            <div id="posts">
+
+                <div class="loading-card">
+
+                    <div class="loader"></div>
+
+                    <p>
+                        Loading your feed...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT SIDEBAR
+             ================================================= -->
+
+        <aside class="right-sidebar">
+
+
+            <!-- =================================================
+                 TRENDING
+                 ================================================= -->
+
+            <div class="trend-card">
+
+                <div class="section-title">
+
+                    <h3>
+                        Trending
+                    </h3>
+
+                    <span>
+                        •••
+                    </span>
+
+                </div>
+
+
+                <!-- TREND 1 -->
+                <div class="trend">
+
+                    <span>
+                        #1
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Creative Ideas
+                        </strong>
+
+                        <small>
+                            1.2K posts
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TREND 2 -->
+                <div class="trend">
+
+                    <span>
+                        #2
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Student Life
+                        </strong>
+
+                        <small>
+                            842 posts
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TREND 3 -->
+                <div class="trend">
+
+                    <span>
+                        #3
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Technology
+                        </strong>
+
+                        <small>
+                            734 posts
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ABOUT SEJAL_GRAM
+                 ================================================= -->
+
+            <div class="about-card">
+
+                <h3>
+                    About Sejal_gram
+                </h3>
+
+                <p>
+                    A simple place to create, manage and share your thoughts.
+                </p>
+
+
+                <div class="about-links">
+
+                    <span>
+                        Privacy
+                    </span>
+
+                    <span>
+                        Community
+                    </span>
+
+                    <span>
+                        Help
+                    </span>
+
+                </div>
+
+
+                <small>
+                    © 2026 Sejal_gram
+                </small>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         DASHBOARD JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
