@@ -9,8 +9,7 @@ const postId = params.get("id");
 
 async function loadPost() {
 
-    const response = await fetch(`http://localhost:5000/api/posts/${postId}`);
-
+    const response = await fetch(`https://sejal-gram.onrender.com/api/posts/${postId}`);
     const data = await response.json();
     const post = data.post;
 
@@ -28,7 +27,7 @@ document.getElementById("editForm").addEventListener("submit", async (e) => {
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
 
-    const response = await fetch(`http://localhost:5000/api/posts/${postId}`, {
+    const response = await fetch(`https://sejal-gram.onrender.com/api/posts/${postId}`, {
 
         method: "PUT",
 
