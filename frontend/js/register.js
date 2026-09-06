@@ -10,7 +10,7 @@ form.addEventListener("submit", async (e) => {
 
     try {
 
-        const response = await fetch("https://sejal-gram.onrender.com", {
+        const response = await fetch("https://sejal-gram.onrender.com/api/auth/register", {
 
             method: "POST",
 
